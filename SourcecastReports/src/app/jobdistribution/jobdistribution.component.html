@@ -1,0 +1,402 @@
+﻿
+<link href="../../../Content/theme.css" rel="stylesheet" />
+<link href="../../../Content/fontawesome-all.css" rel="stylesheet" />
+<br/>
+<h3 >
+    Scheduled Task Report
+</h3>
+<div class="py-1 bg-dark ">
+    <h4 class="alert alert-heading" role="alert">
+        {{title}}
+    </h4>
+    <p class="alert alert-warning" *ngIf="!data || data.length==0 ">Please wait...</p>
+<div class="container bg-dark">
+    <div class="row bg-dark">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                <tr class="bg-gradient">
+                    <th>Job Name</th>
+                    <th>Total Runs</th>
+                    <th>Max Runtume(Min)</th>
+                    <th>Min Runtime(Min)</th>
+                    <th>Problem Count</th>
+                    <th>IsRunning</th>
+                    <th>Attention</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr >
+                    <td class="bg-gradient">Email Distribution</td>
+                    <td>{{data.EmailjobdistributionTotal}}</td>
+                    <td>{{data.EmailjobdistributionMax}}</td>
+                    <td>{{data.EmailjobdistributionMin}}</td>
+                    <td>{{data.EmailjobdistributionProblem}}</td>
+                    <td >
+                        {{data.EmailjobDistributionRunningStatus}}
+                    </td>
+                    <td *ngIf="data.EmailjobDistributionRunningStatus=='Yes'; else other_content" class='bg-danger'></td>
+                    <ng-template #other_content>
+                        <td class='bg-success'></td>
+                    </ng-template>
+                </tr>
+                <tr>
+                    <td class="bg-gradient">Fax Distribution</td>
+                    <td>{{data.FaxjobdistributionTotal}}</td>
+                    <td>{{data.FaxjobdistributionMax}}</td>
+                    <td>{{data.FaxjobdistributionMin}}</td>
+                    <td>{{data.FaxjobdistributionProblem}}</td>
+                    <td>{{data.FaxjobDistributionRunningStatus}}</td>
+                    <td *ngIf="data.EmailjobDistributionRunningStatus=='Yes'; else other_content" class='bg-danger'></td>
+                    <ng-template #other_content>
+                        <td class='bg-success'></td>
+                    </ng-template>
+                </tr>
+                <tr>
+                    <td class="bg-gradient">Associated Email Distribution</td>
+                    <td>{{data.AssociatedEmailjobdistributionTotal}}</td>
+                    <td>{{data.AssociatedEmailjobdistributionMax}}</td>
+                    <td>{{data.AssociatedEmailjobdistributionMin}}</td>
+                    <td>{{data.AssociatedEmailjobdistributionProblem}}</td>
+                    <td>{{data.AssociatedEmailjobdistributionRunningStatus}}</td>
+                    <td *ngIf="data.EmailjobDistributionRunningStatus=='Yes'; else other_content" class='bg-danger'></td>
+                    <ng-template #other_content>
+                        <td class='bg-success'></td>
+                    </ng-template>
+                </tr>
+                <tr>
+                    <td class="bg-gradient">Associated Centers Fax Distribution</td>
+                    <td>{{data.AssociatedFaxdistributionTotal}}</td>
+                    <td>{{data.AssociatedFaxdistributionMax}}</td>
+                    <td>{{data.AssociatedFaxdistributionMin}}</td>
+                    <td>{{data.AssociatedFaxdistributionProblem}}</td>
+                    <td>{{data.AssociatedFaxdistributionRunningStatus}}</td>
+                    <td *ngIf="data.EmailjobDistributionRunningStatus=='Yes'; else other_content" class='bg-danger'></td>
+                    <ng-template #other_content>
+                        <td class='bg-success'></td>
+                    </ng-template>
+                </tr>
+                <tr>
+                    <td class="bg-gradient">Bounced Email Checker</td>
+                    <td>{{data.BouncedTotal}}</td>
+                    <td>{{data.BouncedMax}}</td>
+                    <td>{{data.BouncedMin}}</td>
+                    <td>{{data.BouncedProblem}}</td>
+                    <td>{{data.RunningBounced}}</td>
+                    <td *ngIf="data.EmailjobDistributionRunningStatus=='Yes'; else other_content" class='bg-danger'></td>
+                    <ng-template #other_content>
+                        <td class='bg-success'></td>
+                    </ng-template>
+                </tr>
+                <tr>
+                    <td class="bg-gradient">Redistribution</td>
+                    <td>{{data.ReDistributionTotal}}</td>
+                    <td>{{data.ReDistributionMax}}</td>
+                    <td>{{data.ReDistributionMin}}</td>
+                    <td>{{data.ReDistributionProblem}}</td>
+                    <td>{{data.RunningReDistribution}}</td>
+                    <td *ngIf="data.EmailjobDistributionRunningStatus=='Yes'; else other_content" class='bg-danger'></td>
+                    <ng-template #other_content>
+                        <td class='bg-success'></td>
+                    </ng-template>
+                </tr>
+                <tr>
+                    <td class="bg-gradient">Fax Confirmation Checker</td>
+                    <td>{{data.FaxConfirmTotal}}</td>
+                    <td>{{data.FaxConfirmMax}}</td>
+                    <td>{{data.FaxConfirmMin}}</td>
+                    <td>{{data.FaxConfirmProblem}}</td>
+                    <td>{{data.RunningFaxConChecker}}</td>
+                    <td *ngIf="data.EmailjobDistributionRunningStatus=='Yes'; else other_content" class='bg-danger'></td>
+                    <ng-template #other_content>
+                        <td class='bg-success'></td>
+                    </ng-template>
+                </tr>
+                <tr>
+                    <td class="bg-gradient">Manual Update</td>
+                    <td>{{data.ManualupdateTotal}}</td>
+                    <td>{{data.ManualupdateMax}}</td>
+                    <td>{{data.ManualupdateMin}}</td>
+                    <td>{{data.ManualupdateProblem}}</td>
+                    <td>{{data.RunningManualUpdate}}</td>
+                    <td *ngIf="data.EmailjobDistributionRunningStatus=='Yes'; else other_content" class='bg-danger'></td>
+                    <ng-template #other_content>
+                        <td class='bg-success'></td>
+                    </ng-template>
+                </tr>
+                <tr>
+                    <td class="bg-gradient">Fax Confirmation Checker</td>
+                    <td>{{data.JobDistNotificationTotal}}</td>
+                    <td>{{data.JobDistNotificationMax}}</td>
+                    <td>{{data.JobDistNotificationMin}}</td>
+                    <td>{{data.JobDistNotificationProblem}}</td>
+                    <td>{{data.RunningJobDistNotification}}</td>
+                    <td *ngIf="data.EmailjobDistributionRunningStatus=='Yes'; else other_content" class='bg-danger'></td>
+                    <ng-template #other_content>
+                        <td class='bg-success'></td>
+                    </ng-template>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+    <hr/>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4>Summary of Jobs Distribution</h4>
+                <table class="table">
+                    <thead>
+                    <tr class="bg-gradient">
+                        <th>#</th>
+                        <th>Total</th>
+                        <th>No. of States</th>
+                        <th>No.of Centers</th>
+                        <th>Oldest Job</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="alert-link">Jobs Distrubuted</td>
+                        <td>{{data.TotalJobDis}}</td>
+                        <td>{{data.TotalStateDis}}</td>
+                        <td>{{data.TotalCenterDis}}</td>
+                        <td>{{data.TotalOldest}}</td>
+                    </tr>
+                    <tr>
+                        <td class="alert-link">Via Email</td>
+                        <td>{{data.TotalviaEmail}}</td>
+                        <td>{{data.TotalStateViaEmail}}</td>
+                        <td>{{data.TotalCenterviaEmail}}</td>
+                        <td>{{data.EmailOldest}}</td>
+                    </tr>
+                    <tr>
+                        <td class="alert-link">Via Fax</td>
+                        <td>{{data.TotalviaFax}}</td>
+                        <td>{{data.TotalStateViaFax}}</td>
+                        <td>{{data.TotalCenterviaFax}}</td>
+                        <td>{{data.FaxOldest}}</td>
+                    </tr>
+                    <tr>
+                        <td class="alert-link">Via Mail</td>
+                        <td>{{data.TotalViaMail}}</td>
+                        <td>{{data.TotalStateViaMail}}</td>
+                        <td>{{data.TotalCenterViaMail}}</td>
+                        <td>{{data.MailOldest}}</td>
+                    </tr>
+                    <tr>
+                        <td class="alert-link">Printed</td>
+                        <td>{{data.TotalPrinted}}</td>
+                        <td>{{data.TotalStatePrinted}}</td>
+                        <td>{{data.TotalCenterPrinted}}</td>
+                        <td>{{data.PrintedOldest}}</td>
+                    </tr>
+                    <tr>
+                        <td class="alert-link">Undeliverable</td>
+                        <td>{{data.TotalUndelivered}}</td>
+                        <td>{{data.TotalStateUndelivered}}</td>
+                        <td>{{data.TotalCenterUndelivered}}</td>
+                        <td>{{data.UndeliveredOldestDate}}</td>
+                    </tr>
+                    <tr>
+                        <td class="alert-link">Not Sent *</td>
+                        <td *ngIf="!data.TotalNotSent=='0'; else NotSent"
+                        >{{data.TotalNotSent}}</td>
+                        <td>{{data.TotalStateNotSent}}</td>
+                        <td>N/A</td>
+                        <td>{{data.PNotSentOldestDate}}</td>
+                        <ng-template #NotSent>
+                            <td class='bg-warning'>{{data.TotalNotSent}}</td>
+                        </ng-template>
+                    </tr>
+                    <tr>
+                        <td class="alert-link">Problem Bounced</td>
+                        <td *ngIf="!data.BouncedWithProblem=='0'; else Problem_Bounced">{{data.BouncedWithProblem}}</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <ng-template #Problem_Bounced>
+                            <td class='bg-warning'>{{data.BouncedWithProblem}}</td>
+                        </ng-template>
+                    </tr>
+                    <tr>
+                        <td class="alert-link">Compliance Reports Generated</td>
+                        <td>{{data.TotalAdHocRpt}}</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h6 class="text-muted">Note</h6>
+                <p class="p-y-1">* Older than 12 hours</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4>Confirmed/Bounced/Returned Jobs</h4>
+                <table class="table">
+                    <thead>
+                    <tr></tr>
+                    </thead>
+                </table>
+                <table class="table">
+                    <thead>
+                    <tr class="bg-gradient">
+                        <th>#</th>
+                        <th>Jobs</th>
+                        <th>Emails</th>
+                        <th>Fax</th>
+                        <th>Mails</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="alert-link">Sent</td>
+                        <td>
+                            {{data.TotalJobsSentAll}}
+                        </td>
+                        <td>{{data.TotalEmailSent}}</td>
+                        <td> {{data.TotalFaxSent}}</td>
+                        <td> {{data.TotalMailSent}}</td>
+                    </tr>
+                    <tr>
+                        <td class="alert-link">Confirmed</td>
+                        <td>{{data.TotalConfirmed}}</td>
+                        <td>
+                            {{data.Econfirmed}}
+                        </td>
+                        <td>{{data.Mconfirmed}}</td>
+                        <td> {{data.Fconfirmed}}</td>
+                    </tr>
+                    <tr>
+                        <td class="alert-link">Bounced(for Previous day)</td>
+                        <td>{{data.TotalBounced}}</td>
+                        <td>{{data.BouncedEmail}}</td>
+                        <td>
+                            {{data.BouncedFax}}
+                        </td>
+                        <td>{{data.BouncedMail}}</td>
+                    </tr>
+                    <tr>
+                        <td class="alert-link">Late Bounced</td>
+                        <td>{{data.TotalLateBounced}}</td>
+                        <td>{{data.EmailLateBounced}}</td>
+                        <td>{{data.FaxLateBounced}}</td>
+                        <td>{{data.MailLateBounced}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br/>
+        <div class="card">
+            <div class="card-body">
+                <h4>{{currentDate}}</h4>
+                <table class="table">
+                    <thead>
+                    <tr></tr>
+                    </thead>
+                </table>
+                <table class="table">
+                    <thead>
+                    <tr class="bg-gradient">
+                        <th>Job Status</th>
+                        <th># of Jobs</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let current of status.Current">
+                        <td class="alert-link">
+                            {{current.Status}}
+                        </td>
+                        <td>{{current.Count}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+    <div class="row"></div>
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>{{previousDate}}</h4>
+                        <table class="table">
+                            <thead>
+                            <tr></tr>
+                            </thead>
+                        </table>
+                        <table class="table">
+                            <thead>
+                            <tr class="bg-gradient">
+                                <th>Job Status</th>
+                                <th># of Jobs</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let prev of status.Previous">
+                                <td class="alert-link">
+                                    {{prev.Status}}
+                                </td>
+                                <td>{{prev.Count}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>All Previous Jobs</h4>
+                        <table class="table">
+                            <thead>
+                            <tr></tr>
+                            </thead>
+                        </table>
+                        <table class="table">
+                            <thead>
+                            <tr class="bg-gradient">
+                                <th>Job Status</th>
+                                <th># of Jobs</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let old of status.Old">
+                                <td class="alert-link" >
+                                    {{old.Status}}
+                                </td>
+                                <td *ngIf="old.Status !='Undeliverable' && old.Count!='0' ; else Undeliverable">{{old.Count}}</td>
+                                <ng-template #Undeliverable>
+                                    <td class='bg-warning'>{{old.Count}}</td>
+                                </ng-template>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

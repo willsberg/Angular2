@@ -1,0 +1,35 @@
+﻿<h2>Total Jobs Distributed</h2>
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-body">
+            <h4>Confirmed/Bounced/Returned Jobs</h4>
+            <table class="table">
+                <thead>
+                    <tr></tr>
+                </thead>
+            </table>
+            <table class="table">
+                <thead>
+                    <tr class="bg-gradient">
+                        <th>#</th>
+                        <th>Jobs</th>
+                        <th>Emails</th>
+                        <th>Fax</th>
+                        <th>Mails</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="alert-link">Sent</td>
+                        <td>
+                            {{data.TotalJobsSentAll}}
+                        </td>
+                        <td>{{data.TotalEmailSent}}</td>
+                        <td> {{data.TotalFaxSent}}</td>
+                        <td> {{data.TotalMailSent}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

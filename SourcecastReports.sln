@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourcecastReports", "SourcecastReports\SourcecastReports.csproj", "{11D1C0EA-1CAE-4F2F-9E93-895B5043C73A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourcecastReportsApi", "SourcecastReportsApi\SourcecastReportsApi.csproj", "{64C7F1C6-9A00-4247-BC31-2584348B40E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11D1C0EA-1CAE-4F2F-9E93-895B5043C73A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D1C0EA-1CAE-4F2F-9E93-895B5043C73A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D1C0EA-1CAE-4F2F-9E93-895B5043C73A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11D1C0EA-1CAE-4F2F-9E93-895B5043C73A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64C7F1C6-9A00-4247-BC31-2584348B40E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64C7F1C6-9A00-4247-BC31-2584348B40E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64C7F1C6-9A00-4247-BC31-2584348B40E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64C7F1C6-9A00-4247-BC31-2584348B40E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://rt-vtfs:8080/tfs/jobcentral
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SourcecastReports\\SourcecastReports.csproj
+		SccProjectName1 = SourcecastReports
+		SccLocalPath1 = SourcecastReports
+		SccProjectUniqueName2 = SourcecastReportsApi\\SourcecastReportsApi.csproj
+		SccProjectName2 = SourcecastReportsApi
+		SccLocalPath2 = SourcecastReportsApi
+	EndGlobalSection
+EndGlobal
